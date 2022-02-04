@@ -1,0 +1,36 @@
+<body>
+<!--Temporary-->
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+  </nav>
+    <div id="card">
+      <div id="card-content">
+        <div id="card-title">
+          <h2>Login</h2>
+        </div>
+        <form [formGroup]="loginForm" class="form">
+          <div>
+            <p>
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input formControlName="username" matInput>
+                <mat-hint style="color: red" *ngIf="loginForm.get('username').touched && loginForm.get('username').errors?.required">
+                  Form must contain a value
+                </mat-hint>
+              </mat-form-field>
+
+            <p>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput>
+                <mat-hint style="color: red" *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required">
+                  Form must contain a value
+                </mat-hint>
+              </mat-form-field>
+            </p>
+          </div>
+        </form>
+        <button id="submit-btn" (click)="onLogin()">Login</button>
+      </div>
+    </div>
+</body>

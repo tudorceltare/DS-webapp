@@ -1,0 +1,57 @@
+.div-1{
+  float:left;
+  margin: 10px;
+}
+
+.div-2{
+  float: right;
+  margin-left: 5px;
+}
+
+#card-1{
+  max-width: 350px;
+}
+
+.side-bar-content{
+  color: plum;
+  padding: 20px;
+  margin: 10px;
+}
+
+#div-1{
+  float:left;
+  margin: 10px;
+}
+
+#card{
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 22%;
+  width: 75%;
+}
+
+#client-details{
+  margin: 10px;
+  font-size: 13px;
+  position: absolute;
+  color: darkslategray;
+}
+
+.main{
+  height: 100%;
+}
+
+.custom-p {
+  font-size: large;
+  font-weight: bold;
+  color: darkslateblue;
+}
+
+.button-1{
+  position: absolute;
+  margin: 10px;
+  bottom: 10px;
+}

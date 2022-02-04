@@ -1,0 +1,38 @@
+<div style="text-align: center">
+  <h1>
+    Home Admin
+  </h1>
+</div>
+
+<mat-drawer-container class="main">
+  <mat-drawer mode="side" opened >
+    <div class="side-bar-content">
+      <button mat-raised-button color="accent" (click)="addPerson()">Add Person</button>
+    </div>
+    <button mat-button (click)="returnToLogin()" class="button-1">Logout</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div *ngFor="let person of persons">
+      <div class="div-1">
+        <mat-card class="card-1">
+          <mat-card-title>{{person.name}}</mat-card-title>
+          <mat-card-content>
+            <p>Id: {{person.id}}</p>
+            <p>Age: {{person.age}}</p>
+            <p>Address: {{person.address}}</p>
+            <p>Password: {{person.password}}</p>
+            <p>Email: {{person.email}}</p>
+            <p class="custom-p">Role: {{person.role}}</p>
+
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-stroked-button (click)="getDetails(person)">Update</button>
+            <button mat-stroked-button color="primary" (click)="deviceDetails(person)">Devices</button>
+            <button mat-raised-button color="warn" class="div-2" (click)="deletePerson(person)">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

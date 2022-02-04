@@ -1,0 +1,40 @@
+<mat-drawer-container class="main">
+  <mat-drawer mode="side" opened >
+    <div id="card">
+      <div id="client-details">
+        <h2>Name: {{person.name}}</h2>
+        <p>Age: {{person.age}}</p>
+        <p>Email: {{person.email}}</p>
+        <p>Address: {{person.address}}</p>
+      </div>
+    </div>
+    <div class="side-bar-content">
+      <button mat-raised-button color="accent">Make Reading</button>
+    </div>
+    <div class="side-bar-content">
+      <button mat-button (click)="returnToLogin()" class="button-1">Logout</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div *ngFor="let device of devices">
+      <div id="div-1">
+        <mat-card id="card-1">
+          <mat-card-title>{{device.id}}</mat-card-title>
+          <mat-card-content>
+<!--            <p>Max: {{device.maxConsumption}}</p>-->
+            <p>Avg: {{device.avgConsumption}}</p>
+            <p>Address: {{device.address}}</p>
+            <p>Description: {{device.description}}</p>
+            <p>User Id: {{device.user_id}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-stroked-button>Details</button>
+            <button mat-stroked-button color="primary">Sensors</button>
+            <button mat-raised-button color="warn">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

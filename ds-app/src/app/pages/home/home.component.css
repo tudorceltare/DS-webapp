@@ -1,0 +1,35 @@
+.div-1{
+  float:left;
+  margin: 10px;
+}
+
+.div-2{
+  float: right;
+  margin-left: 5px;
+}
+
+.card-1{
+  max-width: 350px;
+}
+
+.side-bar-content{
+  color: plum;
+  padding: 20px;
+  margin: 10px;
+}
+
+.main{
+  height: 100%;
+}
+
+.custom-p {
+  font-size: large;
+  font-weight: bold;
+  color: darkslateblue;
+}
+
+.button-1{
+  position: absolute;
+  margin: 10px;
+  bottom: 10px;
+}

@@ -1,0 +1,40 @@
+<table class="mat-elevation-z1">
+  <ng-container>
+    <thead>
+    <th>Device Name</th>
+    <th>Max Energy Consumption</th>
+    </thead>
+    <tbody *ngFor="let device of data.deviceIds; let i=index">
+    <tr>
+      <td>{{device}}</td>
+      <td>{{data.avgConsumption[i]}}</td>
+      <td><button mat-raised-button color="warn" (click)="deleteDevice(device)">Delete</button></td>
+    </tr>
+
+    </tbody>
+  </ng-container>
+</table>
+
+<form [formGroup]="deviceForm">
+  <p>
+    <mat-form-field>
+      <mat-label>Device Name</mat-label>
+      <input formControlName="smartDeviceName" matInput>
+      <mat-hint style="color: red" *ngIf="deviceForm.get('smartDeviceName').touched && deviceForm.get('smartDeviceName').errors?.required">
+        Form must contain a value
+      </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Max Energy Consumption</mat-label>
+      <input formControlName="maxConsumption" matInput>
+      <mat-hint style="color: red" *ngIf="deviceForm.get('maxConsumption').touched && deviceForm.get('maxConsumption').errors?.required">
+        Form must contain a value
+      </mat-hint>
+    </mat-form-field>
+  </p>
+
+</form>
+<button mat-button>Read measurements</button>
+<button mat-button (click)="onAdd()">Add Device</button>

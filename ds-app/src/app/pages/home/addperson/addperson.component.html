@@ -1,0 +1,85 @@
+<form [formGroup]="personForm">
+  <div mat-dialog-content>
+    <h1>Add a new person</h1>
+    <p>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="Dwight">
+        <mat-hint style="color: red" *ngIf="personForm.get('name').touched && personForm.get('name').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput placeholder="some username">
+        <mat-hint style="color: red" *ngIf="personForm.get('username').touched && personForm.get('username').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input formControlName="age" matInput placeholder="40">
+        <mat-hint style="color: red" *ngIf="personForm.get('age').touched && personForm.get('age').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input formControlName="address" matInput placeholder="Placeholder">
+        <mat-hint style="color: red" *ngIf="personForm.get('address').touched && personForm.get('address').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput placeholder="email@example.com">
+        <mat-hint style="color: red" *ngIf="personForm.get('email').touched && personForm.get('email').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select required formControlName="role">
+          <mat-option value="Normal">Normal</mat-option>
+          <mat-option value="Admin">Admin</mat-option>
+        </mat-select>
+        <mat-hint style="color: red" *ngIf="personForm.get('role').touched && personForm.get('role').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput placeholder="password">
+        <mat-hint style="color: red" *ngIf="personForm.get('password').touched && personForm.get('password').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input formControlName="confirmPassword" matInput placeholder="confirm password">
+        <mat-hint style="color: red" *ngIf="personForm.get('confirmPassword').touched && personForm.get('confirmPassword').errors?.required">
+          Form must contain a value
+        </mat-hint>
+      </mat-form-field>
+    </p>
+
+    <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+    <button mat-button color="primary" (click)="onAdd()">Confirm</button>
+  </div>
+</form>
